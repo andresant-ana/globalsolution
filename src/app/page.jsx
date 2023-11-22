@@ -1,4 +1,5 @@
 "use client";
+import Slider from '@/components/Slider/Slider';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useEffect } from 'react'
@@ -7,11 +8,11 @@ export default function Home() {
 
   const [imagens, setImagens] = useState([
     {
-      src: 'https://via.placeholder.com/1000x500',
+      src: 'https://via.placeholder.com/230x284',
       alt: 'Imagem 1',
     },
     {
-      src: 'https://via.placeholder.com/1000x500',
+      src: 'https://via.placeholder.com/230x284',
       alt: 'Imagem 2',
     }
   ]);
@@ -21,21 +22,31 @@ export default function Home() {
 
   return (
     <>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl text-center mb-7 mt-7 font-extrabold">Novidades</h1>
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <Slider/>
+
+
+
+
+
+
+
+
+
         <div className="mt-10">
           <h2 className="text-2xl text-center font-extrabold">Pacotes/Ofertas</h2>
           <div className="flex flex-row justify-content-center">
             {imagens.map((imagem, index) => (
               <div key={index} className="w-1/2 p-4">
-                <div className="flex flex-col">
+                <div className="flex flex-col justify-content-center">
                   <Image
                     src={imagem.src}
                     alt={imagem.alt}
-                    className="w-full h-auto object-fit-contain"
-                    width="1000"
-                    height="500"
-                  />
+                    className="object-fit-contain"
+                    width="230"
+                    height="284"
+                    />
                   <h3 className="text-lg font-bold mb-3">
                     {imagem.alt}
                   </h3>
