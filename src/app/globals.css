@@ -36,7 +36,7 @@
         }
 
         .rodape__equipe {
-            @apply flex flex-col gap-[20px];
+            @apply flex flex-col gap-[20px] max-w-[1200px];
 
             .rodape__equipe__turma {
                 @apply font-bold text-[1.125rem];
@@ -62,5 +62,61 @@
                 }
             }
         }
+    }
+
+    .container {
+        @apply h-[500px] w-full m-auto relative;
+
+        & .container__fundo {
+            @apply w-full h-full bg-center bg-cover  bg-black duration-500;
+
+            & .container__fundo__dados {
+                @apply flex flex-col gap-5 text-[#EDF7F6] px-[70px] py-[58.5px] h-full;
+
+                & .container__fundo__dados__titulo {
+                    @apply font-bold text-[1.2rem] text-center;
+                }
+
+                & .container__fundo__dados__subtitulo {
+                    @apply font-bold text-[1.125rem];
+                }
+
+                & .container__fundo__dados__link {
+                    @apply w-fit px-[15px] py-[10px] rounded-[4px] 
+                    border-[1px] border-solid border-[#EDF7F6] 
+                    font-semibold text-center 
+                    transition-colors duration-200
+                    hover:bg-[#EDF7F6] hover:border-transparent hover:text-[#080708];
+                }
+            }
+        }
+
+        & .container__arrow {
+            @apply 
+            h-full flex w-fit items-center absolute py-[auto] px-[2%] text-white/50 select-none 
+            hover:text-white/80 hover:cursor-pointer 
+            active:text-white
+            transition-all duration-200;
+        }
+
+        & .container__arrow--left {
+            @apply -translate-x-0 left-0 hover:bg-gradient-to-r from-[#000] to-transparent;
+        }
+
+        & .container__arrow--right {
+            @apply -translate-x-0 right-0 hover:bg-gradient-to-r from-transparent to-[#000];
+        }
+
+        & .container__dots {
+            @apply w-full flex h-fit justify-center absolute bottom-0 py-[2%] px-[auto] ;
+            & .container__dots__dot {
+                @apply text-white/50 hover:cursor-pointer;
+            }
+
+            & .container__dots__dot--selecionado {
+                @apply text-white shadow-md shadow-[#fff] rounded-full p-0 hover:cursor-pointer;
+            }
+        }
+
     }
 }
