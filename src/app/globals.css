@@ -2,4 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .cabecalho{
+        @apply w-full flex items-center justify-between pl-[50px] pr-[50px] bg-[#EDF7F6] text-[#080708];
 
+        .menu {
+            @apply flex justify-center content-center;
+
+            .menu__item {
+                @apply inline m-1;
+
+                .menu__item__link {
+                    @apply 
+                    block p-1.5 rounded-md 
+                    font-extrabold 
+                    hover:bg-[#080708] hover:text-[#EDF7F6]
+                    transition-all ease-out duration-300 
+                    ;
+                }
+            }
+        }
+
+        .cabecalho__usuario {
+            @apply flex flex-col items-center mt-2 mb-2;
+        }
+    }
+
+    .rodape{
+        @apply bg-[#171219] w-full px-[20px] pt-[25px] pb-[35px] flex flex-col gap-[25px] text-[#EDF7F6];
+
+        .rodape__titulo {
+            @apply font-bold text-[1.2rem];    
+        }
+
+        .rodape__equipe {
+            @apply flex flex-col gap-[20px];
+
+            .rodape__equipe__turma {
+                @apply font-bold text-[1.125rem];
+            }
+
+            .rodape__equipe__membros {
+                @apply flex flex-col gap-[15px];
+
+                .membro {
+                    @apply flex flex-row justify-between text-[1rem];
+
+                    .membro__rm {
+                        @apply font-semibold w-[85px];
+                    }
+
+                    .membro__nome {
+                        @apply font-normal w-[150px];
+                    }
+
+                    .membro__funcao {
+                        @apply font-normal w-[80px];
+                    }
+                }
+            }
+        }
+    }
+}

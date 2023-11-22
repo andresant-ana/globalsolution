@@ -16,7 +16,6 @@ export default function Home() {
   ]);
 
   useEffect(() => {
-    // Carregar imagens
   }, []);
 
   return (
@@ -32,7 +31,7 @@ export default function Home() {
                   <img
                     src={imagem.src}
                     alt={imagem.alt}
-                    className="w-full h-60 object-fit-contain"
+                    className="w-full h-auto object-fit-contain"
                     width="100%"
                   />
                   <h3 className="text-lg font-bold mb-3">
