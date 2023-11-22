@@ -1,4 +1,5 @@
 "use client";
+import Image from 'next/image';
 import { useState } from 'react';
 import { useEffect } from 'react'
 
@@ -28,11 +29,12 @@ export default function Home() {
             {imagens.map((imagem, index) => (
               <div key={index} className="w-1/2 p-4">
                 <div className="flex flex-col">
-                  <img
+                  <Image
                     src={imagem.src}
                     alt={imagem.alt}
                     className="w-full h-auto object-fit-contain"
-                    width="100%"
+                    width="1000"
+                    height="500"
                   />
                   <h3 className="text-lg font-bold mb-3">
                     {imagem.alt}
