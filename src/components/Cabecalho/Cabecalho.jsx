@@ -4,17 +4,17 @@ import { useState } from "react";
 import Image from "next/image";
 
 export default function Cabecalho() {
-  //No momento de recuperar o objeto da sessão, é necessário converter o JSON para objeto novamente.
-  const usuario = JSON.parse(sessionStorage.getItem("obj-user"));
-  const [userLogado] = useState(usuario);
+  // const usuario = JSON.parse(sessionStorage.getItem("obj-user"));
+  // const [userLogado] = useState(usuario);
 
-  const handleLogout = () => {
-    sessionStorage.removeItem("obj-user");
-    sessionStorage.removeItem("token-user");
-    window.location.href = "/";
-  };
+  // const handleLogout = () => {
+  //   sessionStorage.removeItem("obj-user");
+  //   sessionStorage.removeItem("token-user");
+  //   window.location.href = "/";
+  // };
 
-  const usuarioNaoLogado = sessionStorage.getItem("token-user") != null;
+  // const usuarioNaoLogado = sessionStorage.getItem("token-user") != null;]
+  const usuarioNaoLogado = true;
 
   return (
     <header className="cabecalho">
@@ -64,7 +64,9 @@ export default function Cabecalho() {
         alt="" 
         width="50" 
         height="50" />
-        <p className="cabecalho__usuario__email">{usuario != null ? `${usuario.email}` : "undefined"}</p>
+        <p className="cabecalho__usuario__email">
+          {/* {usuario != null ? `${usuario.email}` : "undefined"} */}
+        </p>
       </div>
     </header>
   )
