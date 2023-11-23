@@ -100,7 +100,7 @@ export default function Login() {
                 type="email"
                 name="email"
                 id="idEmail"
-                placeholder="Digite seu e-mail."
+                placeholder="Digite seu e-mail"
                 value={usuario.email}
                 onChange={handleChange}
               />
@@ -111,7 +111,7 @@ export default function Login() {
                 type="text"
                 name="cpf"
                 id="idCPF"
-                placeholder="Digite seu CPF."
+                placeholder="Digite seu CPF"
                 value={usuario.cpf}
                 onChange={handleChange}
               />

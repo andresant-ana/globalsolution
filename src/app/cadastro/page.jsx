@@ -190,7 +190,7 @@ export default function CadUser() {
                 type="text"
                 name="telefone"
                 id="idTelefone"
-                placeholder="Digite seu Telefone Celular."
+                placeholder="Digite seu telefone celular"
                 value={usuario.telefone}
                 onChange={handleChange}
               />
@@ -201,7 +201,7 @@ export default function CadUser() {
                 type="text"
                 name="cep"
                 id="idCEP"
-                placeholder="Digite seu CEP."
+                placeholder="Digite seu CEP"
                 value={usuario.cep}
                 onChange={handleChange}
               />
