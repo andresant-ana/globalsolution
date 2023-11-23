@@ -1,8 +1,15 @@
+import Image from "next/image";
+
 export default function NotFound() {
   return (
-    <div className="font-extrabold h-full w-full fixed">
-        <h1 className="text-6xl text-red-500 text-center mb-7 mt-7">404</h1>
-        <p className="text-red-500 text-center text-3xl mt-7">Página não encontrada!</p>
+    <div className="font-extrabold flex flex-col gap-[20px] items-center h-full w-full my-[50px]">
+        <Image
+        src={'/404.png'}
+        alt="404"
+        width="500"
+        height="500"
+        />
+        <p className="text-red-500 text-center text-3xl">Página não encontrada!</p>
     </div>
   )
 }
