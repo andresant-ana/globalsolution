@@ -16,7 +16,13 @@ export default function Slider() {
             "botao_texto": "Saiba mais",
             "botao_url": "/ia",
             "imagem_src": "/Slider.jpg",
-            "private": true
+            "private": true,
+            "is_video": false
+        },
+        {
+            "titulo": "YouTube video player",
+            "video_src": "https://www.youtube.com/embed/rXm9dhFMU_g?si=0Mjgxfgxly78ir0Q",
+            "is_video": true
         }
     ];
 
@@ -41,15 +47,38 @@ export default function Slider() {
         <section className="container">
             <div className="container__arrow container__arrow--left"><LeftArrow size={60} onClick={prevSlide}/></div>
             <div className="container__arrow container__arrow--right"><RightArrow size={60} onClick={nextSlide}/></div>
-            <div className="container__fundo" style={{backgroundImage: `url(${slides[slideIndiceAtual].imagem_src})`}}>
-                <div className="container__fundo__dados">
-                    <h2 className="container__fundo__dados__titulo">Novidades</h2>
-                    <h3 className="container__fundo__dados__subtitulo">{slides[slideIndiceAtual].titulo}</h3>
-                    <p className="container__fundo__dados__texto">{slides[slideIndiceAtual].texto}</p>
-                    <Link className="container__fundo__dados__link" href={slides[slideIndiceAtual].private ? "/cadastro" : slides[slideIndiceAtual].botao_url}>{slides[slideIndiceAtual].botao_texto}</Link>
-                </div>
+            {
+                !slides[slideIndiceAtual].is_video ? (
+                    <div className="container__fundo" style={{backgroundImage: `url(${slides[slideIndiceAtual].imagem_src})`}}>
+                        <div className="container__fundo__dados">
+                            <h2 className="container__fundo__dados__titulo">Novidades</h2>
+                            <h3 className="container__fundo__dados__subtitulo">{slides[slideIndiceAtual].titulo}</h3>
+                            <p className="container__fundo__dados__texto">{slides[slideIndiceAtual].texto}</p>
+                            <Link className="container__fundo__dados__link" href={slides[slideIndiceAtual].private ? "/cadastro" : slides[slideIndiceAtual].botao_url}>{slides[slideIndiceAtual].botao_texto}</Link>
+                        </div>
 
-            </div>
+                    </div>
+                ) : (
+                    <div className="container__fundo">
+                        <iframe 
+                        className="w-full h-full"
+                            src={slides[slideIndiceAtual].video_src} 
+                            title={slides[slideIndiceAtual].titulo}
+                            frameborder="0" 
+                            allow="
+                            accelerometer; 
+                            autoplay; 
+                            clipboard-write; 
+                            encrypted-media; 
+                            gyroscope; 
+                            picture-in-picture; 
+                            web-share" 
+                            allowfullscreen 
+                        />
+
+                    </div>
+                )
+            }
 
             <div className="container__dots">
                 {slides.map((slide, indice)=> (
