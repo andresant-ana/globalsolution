@@ -41,7 +41,7 @@ export default function Cabecalho() {
                 </li>
                 
                 <li className="menu__item">
-                  <Link href="/" onClick={handleLogout} className="menu__item__link">LOGOUT</Link>
+                  {/* <Link href="/" onClick={handleLogout} className="menu__item__link">LOGOUT</Link> */}
                 </li>
               </>
             ) : (
