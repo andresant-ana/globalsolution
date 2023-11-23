@@ -94,7 +94,7 @@ export default function Login() {
 
         <div>
           <p>
-            Ainda não possui uma conta?{" "}
+            Ainda não possui uma conta? {" "}
           </p>
           <p>
             <Link href="/cadastro">Clique aqui para se cadastrar!</Link>
