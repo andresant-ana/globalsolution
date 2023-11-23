@@ -13,8 +13,8 @@ export default function Cabecalho() {
   //   window.location.href = "/";
   // };
 
-  // const usuarioNaoLogado = sessionStorage.getItem("token-user") != null;]
-  const usuarioNaoLogado = true;
+  // const usuarioLogado = !(sessionStorage.getItem("token-user") != null);
+  const usuarioLogado = true;
 
   return (
     <header className="cabecalho">
@@ -34,7 +34,7 @@ export default function Cabecalho() {
             <Link href="/sobre" className="menu__item__link">SOBRE</Link>
           </li>
           {
-            usuarioNaoLogado ? (
+            usuarioLogado ? (
               <>
                 <li className="menu__item">
                   <Link href="/ia" className="menu__item__link">IA</Link>
