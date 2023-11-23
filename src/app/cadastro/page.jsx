@@ -116,15 +116,39 @@ export default function CadUser() {
     }
   };
 
+  const handleLimpar = () => {
+    setUsuario({
+      nome: "",
+      email: "",
+      cpf: "",
+      dataNascimento: "",
+      sexo: "",
+      telefone: "",
+      cep: "",
+      alergico: false,
+      alergia: "",
+      medicamentoContinuo: false,
+      medicamento: "",
+    });
+  };
+
   return (
     <div>
-
       <h2 className={classeLoginMsg}>{msg}</h2>
 
       <div>
+        <div>
+          <p>
+            Possui uma conta?{" "}
+          </p>
+          <p>
+            <Link href="/login">Clique aqui para fazer login!</Link>
+          </p>
+        </div>
+
         <form onSubmit={handleSubmit}>
           <fieldset>
-            <legend>CADASTRO</legend>
+            <legend>Cadastro</legend>
             <div>
               <label htmlFor="idNome">Nome:</label>
               <input
@@ -247,13 +271,10 @@ export default function CadUser() {
               )}
             </div>
             <div>
-              <button>CADASTRAR</button>
-            </div>
-            <div>
-              <p>
-                Se você já possui registro.{" "}
-                <Link href="/login">CLIQUE AQUI</Link>
-              </p>
+              <button type="button" onClick={handleLimpar}>
+                Limpar
+              </button>
+              <button>Cadastrar</button>
             </div>
           </fieldset>
         </form>

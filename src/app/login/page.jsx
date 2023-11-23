@@ -91,9 +91,19 @@ export default function Login() {
       <h2 className={classeLoginMsg}>{msg}</h2>
 
       <div>
+
+        <div>
+          <p>
+            Ainda não possui uma conta?{" "}
+          </p>
+          <p>
+            <Link href="/cadastro">Clique aqui para se cadastrar!</Link>
+          </p>
+        </div>
+
         <form onSubmit={handleSubmit}>
           <fieldset>
-            <legend>LOGIN</legend>
+            <legend>Login</legend>
             <div>
               <label htmlFor="idEmail">Email:</label>
               <input
@@ -117,13 +127,7 @@ export default function Login() {
               />
             </div>
             <div>
-              <button>LOGIN</button>
-            </div>
-            <div>
-              <p>
-                Se você ainda não possui registro.{" "}
-                <Link href="/cadastro">CLIQUE AQUI</Link>
-              </p>
+              <button>Entrar</button>
             </div>
           </fieldset>
         </form>
