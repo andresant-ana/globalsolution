@@ -18,6 +18,7 @@ export default function CadUser() {
     alergia: "",
     medicamentoContinuo: false,
     medicamento: "",
+    foto_perfil: "",
   });
 
   const [msg, setMsg] = useState("");
@@ -73,20 +74,18 @@ export default function CadUser() {
     e.preventDefault();
 
     try {
-      const response = await fetch(
-        "http://localhost:3000/api/base/base-cad",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(usuario),
-        }
-      );
+      const response = await fetch("http://localhost:3000/api/base/base-cad", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(usuario),
+      });
 
       if (response.ok) {
         const obj = await response.json();
         if (obj) {
           setMsg("Cadastro realizado com sucesso!");
 
+          //TODO: Após o usuário se cadastrar, manter o usuário logado com seus dados cadastrados automaticamente envia-lo para página inicial (agora logado em sua conta)
           setTimeout(() => {
             setMsg("");
             navigate.push("/");
@@ -107,6 +106,7 @@ export default function CadUser() {
               alergia: "",
               medicamentoContinuo: false,
               medicamento: "",
+              foto_perfil: "",
             });
           }, 5000);
         }
@@ -129,156 +129,60 @@ export default function CadUser() {
       alergia: "",
       medicamentoContinuo: false,
       medicamento: "",
+      foto_perfil: "",
     });
   };
 
   return (
-    <div>
+    <article className="form-page">
       <h2 className={classeLoginMsg}>{msg}</h2>
 
-      <div>
-        <div>
-          <p>
-            Possui uma conta?{" "}
-          </p>
-          <p>
-            <Link href="/login">Clique aqui para fazer login!</Link>
-          </p>
-        </div>
+      <section className="form-page__redirect">
+        <p className="form-page__redirect__text">Possui uma conta?{" "}</p>
+        <p><Link href="/login" className="form-page__redirect__link">Clique aqui para fazer login!</Link></p>
+      </section>
 
-        <form onSubmit={handleSubmit}>
-          <fieldset>
-            <legend>Cadastro</legend>
-            <div>
-              <label htmlFor="idNome">Nome:</label>
-              <input
-                type="text"
-                name="nome"
-                id="idNome"
-                placeholder="Digite seu nome"
-                value={usuario.nome}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="idEmail">Email:</label>
-              <input
-                type="email"
-                name="email"
-                id="idEmail"
-                placeholder="Digite seu e-mail"
-                value={usuario.email}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="idCPF">CPF:</label>
-              <input
-                type="text"
-                name="cpf"
-                id="idCPF"
-                placeholder="Digite seu CPF"
-                value={usuario.cpf}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="idDataNascimento">Data de Nascimento:</label>
-              <input
-                type="text"
-                name="dataNascimento"
-                id="idDataNascimento"
-                placeholder="Digite sua data de nascimento"
-                value={usuario.dataNascimento}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="idSexo">Sexo:</label>
-              <select
-                name="sexo"
-                id="idSexo"
-                value={usuario.sexo}
-                onChange={handleChange}
-              >
-                <option value="" disabled>
-                  Selecione
-                </option>
-                <option value="masculino">Masculino</option>
-                <option value="feminino">Feminino</option>
-              </select>
-            </div>
-            <div>
-              <label htmlFor="idTelefone">Telefone Celular:</label>
-              <input
-                type="text"
-                name="telefone"
-                id="idTelefone"
-                placeholder="Digite seu telefone celular"
-                value={usuario.telefone}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="idCEP">CEP:</label>
-              <input
-                type="text"
-                name="cep"
-                id="idCEP"
-                placeholder="Digite seu CEP"
-                value={usuario.cep}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label htmlFor="idAlergico">Alérgico a algo?</label>
-              <input
-                type="checkbox"
-                name="alergico"
-                id="idAlergico"
-                checked={usuario.alergico}
-                onChange={handleChange}
-              />
-              {usuario.alergico && (
-                <input
-                  type="text"
-                  name="alergia"
-                  placeholder="Digite a alergia"
-                  value={usuario.alergia}
-                  onChange={handleChange}
-                />
-              )}
-            </div>
-            <div>
-              <label htmlFor="idMedicamentoContinuo">
-                Faz uso de medicamento contínuo?
-              </label>
-              <input
-                type="checkbox"
-                name="medicamentoContinuo"
-                id="idMedicamentoContinuo"
-                checked={usuario.medicamentoContinuo}
-                onChange={handleChange}
-              />
-              {usuario.medicamentoContinuo && (
-                <input
-                  type="text"
-                  name="medicamento"
-                  placeholder="Digite o medicamento"
-                  value={usuario.medicamento}
-                  onChange={handleChange}
-                />
-              )}
-            </div>
-            <div>
-              <button type="button" onClick={handleLimpar}>
-                Limpar
-              </button>
-              <button>Cadastrar</button>
-            </div>
-          </fieldset>
-        </form>
-      </div>
-    </div>
+      <form onSubmit={handleSubmit} className="form-page__form">
+        <fieldset className="form-page__form__field">
+          <legend className="form-page__form__field__titulo">Cadastro</legend>
+
+          <input type="text" id="idNome" name="nome" className="input" placeholder="Primeiro nome" value={usuario.nome} onChange={handleChange} />
+          <input type="email" id="idEmail" name="email" className="input" placeholder="E-mail" value={usuario.email} onChange={handleChange} />
+          <input type="text" id="idCPF" name="cpf" className="input" placeholder="CPF" value={usuario.cpf} onChange={handleChange} />
+          <input type="text" id="idDataNascimento" name="dataNascimento" className="input" placeholder="Data de nascimento" value={usuario.dataNascimento} onChange={handleChange} />
+
+          <select id="idSexo" name="sexo" className="input" value={usuario.sexo} onChange={handleChange} >
+            <option value="" disabled selected>Sexo</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+          </select>
+
+          <input type="text" id="idTelefone" name="telefone" className="input" placeholder="Telefone celular" value={usuario.telefone} onChange={handleChange} />
+          <input type="text" id="idCEP" name="cep" className="input" placeholder="CEP" value={usuario.cep} onChange={handleChange} />
+
+          <div className="input--checkbox">
+            <input type="checkbox" id="idAlergico" name="alergico" checked={usuario.alergico} onChange={handleChange} />
+            <label htmlFor="idAlergico">Alérgico a algo?</label>
+          </div>
+          {usuario.alergico && (
+            <input type="text" name="alergia" className="input--tab" placeholder="Digite a alergia" value={usuario.alergia} onChange={handleChange} />
+          )}
+
+          <div className="input--checkbox">
+            <input type="checkbox" id="idMedicamentoContinuo" name="medicamentoContinuo" checked={usuario.medicamentoContinuo} onChange={handleChange} />
+            <label htmlFor="idMedicamentoContinuo">Faz uso de medicamento contínuo?</label>
+          </div>
+          {usuario.medicamentoContinuo && (
+            <input type="text" name="medicamento" className="input--tab" placeholder="Digite o medicamento" value={usuario.medicamento} onChange={handleChange} />
+          )}
+
+          <section className="w-full flex justify-center gap-[75px]">
+            <button type="button" onClick={handleLimpar} className="w-full button button-black-outline">Limpar</button>
+            <button type="submit" className="w-full button button-color-filled">Cadastrar</button>
+          </section>
+        
+        </fieldset>
+      </form>
+    </article>
   );
 }

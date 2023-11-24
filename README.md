@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TAREFAS (TO DO)
+## Cabeçalho
+### Menu
+- Versão para visitante com:
+    - **Função:** Fechar (X)
+    - **Página**: Home
+    - **Página:** Sobre nós
+    - **Página:** Cadastre-se
+    - **Página:** Login
 
-## Getting Started
+- Versão para usuário com:
+    - **Função:** Fechar (X)
+    - **Página**: Home
+    - **Página:** Sobre nós
+    - **SubMenu:** Wiki
+- **Página:** Doenças de pele
+    - **Função:** Sair (Logout)
 
-First, run the development server:
+___
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Perfil
+- **Versão para visitante:**
+Conter somente um _icone de perfil genérico_ não clicável.
+Exemplo:
+<div style="width: 100%; display: flex; flex-direction: column; align-items: end;">
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Perfil Generico](/public/icons/icon-perfil-generic.svg)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+</div>
+  
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Versão para usuário:**
+Conter a _foto de perfil_ do usuário coletada via sessionStorage + 
+o _primeiro nome_ do usuário também coletado via sessionStorage.
+Exemplo:
+ 
+<div style="width: 100%; display: flex; flex-direction: column; align-items: end;">
+<div style="width: 40px; height: 50px;">
 
-## Learn More
+![Perfil Exemplo](/public/imgs/about-img-equipe-gabriel.png)
+ 
+</div>
+<input type="text" style="background-color: transparent; border: none; color: #fff; font-weight: 400; font-size: .8rem; width: 40px; text-align: center;" value="Gabriel">
+</div>
 
-To learn more about Next.js, take a look at the following resources:
+___
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Rodapé [X]
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

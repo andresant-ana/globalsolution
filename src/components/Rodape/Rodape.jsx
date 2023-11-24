@@ -1,4 +1,5 @@
 import React from 'react'
+import { RxFigmaLogo } from 'react-icons/rx';
 
 export default function Rodape() {
 
@@ -28,7 +29,13 @@ export default function Rodape() {
           ))}
         </ul>
       </section>
-      <p className='rodape__copyright'>&copy; 2023 - Global Solution - Desenvolvido por .</p>
+      <div className="flex justify-between">
+        <a href="https://www.figma.com/file/lmCEvaGWq2J9YR8TQ3xqYT/GS-2?type=design&mode=design&t=zNjhbfcJOAANYjLs-1" className='flex items-center font-semibold'>
+          <RxFigmaLogo size={30}/>
+        </a>
+        <p className='rodape__copyright'>&copy; 2023 - Global Solution - Desenvolvido por GlowAI</p>
+
+      </div>
     </footer>
   )
 }

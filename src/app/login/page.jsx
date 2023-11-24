@@ -86,52 +86,42 @@ export default function Login() {
   };
 
   return (
-    <div>
-
+    <article className="form-page">
       <h2 className={classeLoginMsg}>{msg}</h2>
 
-      <div>
+      <section className="form-page__redirect">
+        <p className="form-page__redirect__text">Ainda não possui uma conta? {" "}</p>
+        <p><Link href="/cadastro" className="form-page__redirect__link">Clique aqui para se cadastrar!</Link></p>
+      </section>
 
-        <div>
-          <p>
-            Ainda não possui uma conta? {" "}
-          </p>
-          <p>
-            <Link href="/cadastro">Clique aqui para se cadastrar!</Link>
-          </p>
-        </div>
-
-        <form onSubmit={handleSubmit}>
-          <fieldset>
-            <legend>Login</legend>
-            <div>
-              <label htmlFor="idEmail">Email:</label>
+      <form onSubmit={handleSubmit} className="form-page__form">
+        <fieldset className="form-page__form__field">
+          <legend className="form-page__form__field__titulo">Login</legend>
               <input
                 type="email"
-                name="email"
                 id="idEmail"
+                name="email"
+                className="input"
                 placeholder="Digite seu e-mail"
                 value={usuario.email}
                 onChange={handleChange}
               />
-            </div>
-            <div>
-              <label htmlFor="idCPF">CPF:</label>
               <input
                 type="text"
-                name="cpf"
                 id="idCPF"
+                name="cpf"
+                className="input"
                 placeholder="Digite seu CPF"
                 value={usuario.cpf}
                 onChange={handleChange}
               />
-            </div>
-            <div>
-              <button>Entrar</button>
-            </div>
-          </fieldset>
-        </form>
-      </div>
-    </div>
+
+          <section>
+            <button type="submit" className="w-[155px] button button-color-filled">Login</button>
+          </section>
+        
+        </fieldset>
+      </form>
+    </article>
   );
 }
