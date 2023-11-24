@@ -2,22 +2,81 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
+import {RxHamburgerMenu, RxEnter, RxExit} from 'react-icons/rx';
+import {CgProfile} from 'react-icons/cg';
+import {VscClose} from 'react-icons/vsc';
 
 export default function Cabecalho() {
-  // const usuario = JSON.parse(sessionStorage.getItem("obj-user"));
-  // const [userLogado] = useState(usuario);
+  const usuario = JSON.parse(sessionStorage.getItem("obj-user"));
+  const usuarioToken = sessionStorage.getItem("token-user");
 
-  // const handleLogout = () => {
-  //   sessionStorage.removeItem("obj-user");
-  //   sessionStorage.removeItem("token-user");
-  //   window.location.href = "/";
-  // };
+  const [userLogado] = useState(usuario);
 
-  // const usuarioLogado = !(sessionStorage.getItem("token-user") != null);
-  const usuarioLogado = true;
+  const handleLogout = () => {
+    sessionStorage.removeItem("obj-user");
+    sessionStorage.removeItem("token-user");
+    window.location.href = "/";
+  };
+
+  const usuarioLogado = usuarioToken != null;
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const openMenu = ()=>{
+    setIsMenuOpen(!isMenuOpen);
+    console.log(isMenuOpen);
+  };
 
   return (
     <header className="cabecalho">
+      <div className="cabecalho__menu">
+        <div  onClick={()=>openMenu()}>
+          <RxHamburgerMenu size={30} className="cabecalho__menu__menu-icon"/>
+
+        </div>
+        {isMenuOpen ? (
+          <div className="cabecalho__menu__screen">
+            <div className="cabecalho__menu__navbar">
+              <div onClick={()=>openMenu()}>
+                <VscClose size={30} className="cabecalho__menu__navbar__close-icon" />
+              </div>
+              <Link href='/' className="cabecalho__menu__navbar__link ">
+                Página Inicial
+              </Link>
+              <Link href='/' className="cabecalho__menu__navbar__link">
+                Sobre nós
+              </Link>
+              {
+                usuarioLogado ? (
+                  <>
+                    <Link href='/' onClick={handleLogout} className="cabecalho__menu__navbar__link">
+                      <RxExit/>
+                      Logout
+                    </Link>
+                    <Link href='/wiki' className="cabecalho__menu__navbar__link">
+                      WIKI
+                    </Link>
+
+                  </>
+                ) : (
+                  <>
+                    <Link href='/cadastro' className="cabecalho__menu__navbar__link">
+                      <RxEnter/>
+                      Cadastre-se
+                    </Link>
+                    <Link href='/login' className="cabecalho__menu__navbar__link">
+                      <RxEnter/>
+                      Login
+                    </Link>
+                  </>
+                )
+              }
+            </div>
+          </div>
+          )
+          : (<></>)
+        }
+      </div>
       <div className="cabecalho__logo">
         <Image
         src="/imgs/logo-NotreDameIntermedica.png"
@@ -25,7 +84,7 @@ export default function Cabecalho() {
         width="116"
         height="32"/>
       </div>
-      <nav className="cabecalho__navegacao">
+      {/* <nav className="cabecalho__navegacao">
         <ul className="menu">
           <li className="menu__item">
             <Link href="/" className="menu__item__link">HOME</Link>
@@ -41,7 +100,7 @@ export default function Cabecalho() {
                 </li>
                 
                 <li className="menu__item">
-                  {/* <Link href="/" onClick={handleLogout} className="menu__item__link">LOGOUT</Link> */}
+                  <Link href="/" onClick={handleLogout} className="menu__item__link">LOGOUT</Link>
                 </li>
               </>
             ) : (
@@ -57,17 +116,17 @@ export default function Cabecalho() {
             )
           }
         </ul>
-      </nav>
-      <div className="cabecalho__usuario">
-        <Image className="cabecalho__usuario__foto-de-perfil" 
-        src="/icons/icon-perfil-generic.svg" 
-        alt="" 
-        width="50" 
-        height="50" />
+      </nav> */}
+      <Link className="cabecalho__usuario" href={usuario != null ? `/usuario/${usuario.nome}/${usuarioToken}` : '/'}>
+        { 
+        usuario != null ? 
+        usuario.foto_perfil ? <Image src={usuario.foto_perfil} alt=""  width={30} height={30}/> : 
+        <CgProfile size={30}/> : <CgProfile size={30}/>
+        }
         <p className="cabecalho__usuario__email">
-          {/* {usuario != null ? `${usuario.email}` : "undefined"} */}
+          {usuario != null ? `${usuario.nome}` : "undefined"}
         </p>
-      </div>
+      </Link>
     </header>
   )
 }
