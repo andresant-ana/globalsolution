@@ -4,7 +4,8 @@ import { useState } from "react";
 // Icones
 import { RxHamburgerMenu, RxEnter, RxExit } from 'react-icons/rx';
 import { CgProfile } from 'react-icons/cg';
-import { VscClose, VscHome } from 'react-icons/vsc';
+import { VscClose } from 'react-icons/vsc';
+import { IoHome } from 'react-icons/io5'
 import { MdPeopleAlt, MdArticle } from "react-icons/md";
 
 import Link from "next/link";
@@ -62,7 +63,7 @@ export default function Cabecalho() {
               <VscClose size={30} className="cabecalho__menu__navbar__close-icon" />
             </div>
             <Link href='/' className="cabecalho__menu__navbar__link ">
-              <VscHome />
+              <IoHome />
               Página Inicial
             </Link>
             <Link href='/' className="cabecalho__menu__navbar__link">
