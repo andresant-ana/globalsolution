@@ -11,8 +11,8 @@ export default function Slider() {
 
     const slides = [
         {
-            "titulo": "IA diagnostica doença de pele",
-            "texto": "Inteligência Artifical criada pela FIAP, auxilia pacientes com doença de pele.",
+            "titulo": "Wiki de Doenças de pele",
+            "texto": "Aqui você encontra informações gerais sobre algumas doenças de pele.",
             "botao_texto": "Saiba mais",
             "botao_url": "/wiki/doencas-de-pele",
             "imagem_src": "/imgs/home-slider-img-ia.png",
