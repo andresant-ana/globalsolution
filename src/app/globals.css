@@ -108,7 +108,7 @@
             @apply w-full h-full bg-center bg-cover  bg-black duration-500;
 
             & .container__fundo__dados {
-                @apply flex flex-col gap-5 text-[#EDF7F6] px-[70px] py-[58.5px] h-full;
+                @apply flex flex-col gap-5 text-[#EDF7F6] px-[120px] py-[58.5px] h-full;
 
                 & .container__fundo__dados__titulo {
                     @apply font-bold text-[1.2rem] text-center;
