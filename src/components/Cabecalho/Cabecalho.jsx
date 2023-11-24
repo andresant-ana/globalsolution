@@ -20,7 +20,7 @@ export default function Cabecalho() {
     <header className="cabecalho">
       <div className="cabecalho__logo">
         <Image
-        src="/notredame_logo.png"
+        src="/imgs/logo-NotreDameIntermedica.png"
         alt=""
         width="116"
         height="32"/>
@@ -60,7 +60,7 @@ export default function Cabecalho() {
       </nav>
       <div className="cabecalho__usuario">
         <Image className="cabecalho__usuario__foto-de-perfil" 
-        src="/perfil_icone.svg" 
+        src="/icons/icon-perfil-generic.svg" 
         alt="" 
         width="50" 
         height="50" />

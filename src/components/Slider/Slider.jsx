@@ -14,8 +14,8 @@ export default function Slider() {
             "titulo": "IA diagnostica doença de pele",
             "texto": "Inteligência Artifical criada pela FIAP, auxilia pacientes com doença de pele.",
             "botao_texto": "Saiba mais",
-            "botao_url": "/ia",
-            "imagem_src": "/Slider.jpg",
+            "botao_url": "/wiki/doencas-de-pele",
+            "imagem_src": "/imgs/home-slider-img-ia.png",
             "private": true,
             "is_video": false
         },
