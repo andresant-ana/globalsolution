@@ -4,21 +4,23 @@
 
 @layer components {
     .cabecalho{
-        @apply w-full flex items-center justify-between pl-[50px] pr-[50px] bg-[#EDF7F6] text-[#080708];
+        @apply w-full flex items-center justify-between py-[10px] px-[25px] bg-[#EDF7F6] text-[#080708];
 
-        & .menu {
-            @apply flex justify-center content-center;
-
-            & .menu__item {
-                @apply inline m-1;
-
-                & .menu__item__link {
-                    @apply 
-                    block p-1.5 rounded-md 
-                    font-extrabold 
-                    hover:bg-[#080708] hover:text-[#EDF7F6]
-                    transition-all ease-out duration-300 
-                    ;
+        & .cabecalho__navegacao {
+            & .menu {
+                @apply flex justify-center content-center;
+    
+                & .menu__item {
+                    @apply inline m-1;
+    
+                    & .menu__item__link {
+                        @apply 
+                        block p-1.5 rounded-md 
+                        font-extrabold 
+                        hover:bg-[#080708] hover:text-[#EDF7F6]
+                        transition-all ease-out duration-300 
+                        ;
+                    }
                 }
             }
         }
