@@ -7,21 +7,34 @@
         @apply w-full flex items-center justify-between py-[10px] px-[25px] bg-[#EDF7F6] text-[#080708];
 
         & .cabecalho__menu {
+            & .cabecalho__menu__menu-icon {
+                @apply cursor-pointer;
+            }
 
             & .cabecalho__menu__screen {
                 @apply w-screen h-screen fixed bg-black/20 z-40 top-0 bottom-0 left-0 right-0;
-            }
-            & .cabecalho__menu__navbar {
-                @apply w-1/4 px-[25px] py-[24px] 
-                flex flex-col gap-[15px] 
-                bg-[#EDF7F6] text-xl text-[#080708] font-semibold 
-                fixed top-0 bottom-0 left-0 z-50;
+            
+                & .cabecalho__menu__navbar {
+                    @apply w-1/4 px-[25px] py-[24px] 
+                    flex flex-col gap-[15px] 
+                    bg-[#EDF7F6] text-xl text-[#080708] font-semibold 
+                    fixed top-0 bottom-0 left-0 z-50;
 
-                & .cabecalho__menu__navbar__link {
-                    @apply p-[10px] rounded-[10px] flex items-center gap-5 transition-colors ease-in-out hover:bg-[#080708] hover:text-[#EDF7F6];
+                    & .cabecalho__menu__navbar__close-icon {
+                        @apply cursor-pointer;
+                    }
+    
+                    & .cabecalho__menu__navbar__link {
+                        @apply p-[10px] rounded-[10px] flex items-center gap-5 transition-colors ease-in-out hover:bg-[#080708] hover:text-[#EDF7F6];
+                    }
+    
                 }
-
             }
+
+            & .exit {
+                @apply w-full h-full;
+            }
+            
         }
 
         & .cabecalho__navegacao {
