@@ -1,4 +1,12 @@
 {
-    "usuarios": [
-    ]
+  "usuarios": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2,
+      "email": "gabriel",
+      "cpf": 1
+    }
+  ]
 }
