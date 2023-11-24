@@ -12,7 +12,7 @@ export async function POST(request, response) {
         const lista = await JSON.parse(file);
 
         // Obtendo o maior id na lista e alterando id recebido pelo usuário
-        const newId = lista.usuarios[lista.usuarios.length - 1].id + 1;
+        const newId = lista.usuarios.length > 0 ? lista.usuarios[lista.usuarios.length - 1].id + 1 : 1;
         userRequest.id = newId;
 
         // Adcionando userRequest a lista e reescrevendo arquivo com essa nova lista
