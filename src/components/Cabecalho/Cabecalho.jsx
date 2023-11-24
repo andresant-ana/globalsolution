@@ -30,7 +30,7 @@ export default function Cabecalho() {
   return (
     <header className="cabecalho">
       <div className="cabecalho__menu">
-        <div  onClick={()=>openMenu()}>
+        <div onClick={()=>openMenu()}>
           <RxHamburgerMenu size={30} className="cabecalho__menu__menu-icon"/>
 
         </div>
@@ -72,17 +72,20 @@ export default function Cabecalho() {
                 )
               }
             </div>
+            <div className="exit" onClick={()=>openMenu()}></div>
           </div>
           )
           : (<></>)
         }
       </div>
       <div className="cabecalho__logo">
-        <Image
-        src="/imgs/logo-NotreDameIntermedica.png"
-        alt=""
-        width="116"
-        height="32"/>
+        <Link href='/'>
+          <Image
+          src="/imgs/logo-NotreDameIntermedica.png"
+          alt=""
+          width="116"
+          height="32"/>
+        </Link>
       </div>
       {/* <nav className="cabecalho__navegacao">
         <ul className="menu">
