@@ -82,15 +82,15 @@
                     @apply flex flex-row justify-between text-[1rem];
 
                     & .membro__rm {
-                        @apply font-semibold w-[100px];
+                        @apply font-semibold w-[200px];
                     }
 
                     & .membro__nome {
-                        @apply font-normal w-[150px] text-center;
+                        @apply font-normal w-[200px] text-center;
                     }
 
                     & .membro__funcao {
-                        @apply font-normal w-[100px] text-right;
+                        @apply font-normal w-[200px] text-right;
                     }
                 }
             }
