@@ -14,18 +14,19 @@ export default async function DoencasDePele() {
 
 
     return (
-        <div className='w-full h-full min-h-[80vh] p-[25px] pb-[50px] bg-[#EDF7F6]'>
+        <div className=''>
 
-            <div className='flex flex-col'>
+            <div className=''>
 
-                <ul className='max-w-[800px] flex flex-col gap-[25px] items-center'>
+                <ul className=''>
                     {doencasDePele.map((doenca)=> (
                         <li key={doenca.id}>
-                            <div className="w-full h-[50px] px-[25px] py-[13px] flex justify-between items-center text-[1.2rem] bg-[#fff] rounded-[10px] cursor-pointer">
+                            <div className=''>
                                 <h2 className=" font-bold text-[#080708]">{doenca.titulo}</h2>
                                 <IoMdArrowDropdown/>
                             </div>
                         </li>
+                        
                     ))}
                 </ul>
             </div>
