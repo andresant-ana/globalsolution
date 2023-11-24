@@ -1,12 +1,54 @@
 {
   "usuarios": [
+  ],
+  "doencas_de_pele": [
     {
-      "id": 1
-    },
-    {
-      "id": 2,
-      "email": "gabriel",
-      "cpf": 1
+      "id": 1,
+      "titulo": "Herpes labial",
+      "descricao": "O herpes labial é uma infecção causada pelo vírus herpes simplex tipo 1.",
+      "sintomas": [
+        "Os sintomas observados incluem",
+        "Sensação de formigamento, queimação ou coceira ao redor dos lábios",
+        "Uma pequena mancha dura e dolorida ao redor dos lábios",
+        "Pequenas bolhas cheias de fluidos, localizados nos lábios ou ao redor deles",
+        "Estourar as bolhas formando feridas que expulsam o fluido",
+        "Bolhas estouradas viram crostas",
+        "Febre",
+        "Gomas doloridas",
+        "Dor de garganta",
+        "Dor de cabeça",
+        "Dores musculares",
+        "linfonodos inchados"
+      ],
+      "imagemSintomas": "/imgs/img-herpes-labial.png",
+      "causas": [
+        "HSV- 2, o qual geralmente causa herpes genital, pode se espalhar para a boca durante o sexo oral e causar herpes labial",
+        "O vírus se espalha facilmente pelo contato de pessoa a pessoa através",
+        "Se beijando",
+        "sexo oral",
+        "Fluido de bolhas estouradas",
+        "Compartilhar objetos como lâminas de barbear, toalhas, utensílios",
+        "Os vírus que permanecem inativos podem ser reativados para causar reaparecimento da doença",
+        "Isso pode ser desencadeado por",
+        "Outras infecções virais",
+        "Febre",
+        "Mudanças hormonais durante os ciclos menstruais",
+        "Estresse",
+        "fadiga",
+        "Exposição à luz solar ou ao vento",
+        "Sistema imunológico enfraquecido devido ao tratamento de câncer"
+      ],
+      "imagemCausa": "/imgs/img-herpes-labial.png",
+      "tratamentos": [
+        "Dermatologista: Especialista no estudo da pele e seus distúrbios",
+        "Antivirais: Seja na forma de pílulas orais ou cremes para serem aplicados nas feridas; medicamentos em formas injetáveis ​​são recomendados em casos graves",
+        "Analgésicos: Para aliviar a dor",
+        "Evite tocar, esfregar ou coçar as bolhas ou feridas",
+        "Não beije os outros",
+        "Tome ou aplique os medicamentos conforme a prescrição",
+        "Utilize cremes hidratantes, protetores labiais ou cremes para prevenir a secagem dos lábios",
+        "Aplique compressas frias para reduzir a vermelhidão e a formação de crostas"
+      ]
     }
   ]
 }
