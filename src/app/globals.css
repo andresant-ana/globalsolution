@@ -6,6 +6,24 @@
     .cabecalho{
         @apply w-full flex items-center justify-between py-[10px] px-[25px] bg-[#EDF7F6] text-[#080708];
 
+        & .cabecalho__menu {
+
+            & .cabecalho__menu__screen {
+                @apply w-screen h-screen fixed bg-black/20 z-40 top-0 bottom-0 left-0 right-0;
+            }
+            & .cabecalho__menu__navbar {
+                @apply w-1/4 px-[25px] py-[24px] 
+                flex flex-col gap-[15px] 
+                bg-[#EDF7F6] text-xl text-[#080708] font-semibold 
+                fixed top-0 bottom-0 left-0 z-50;
+
+                & .cabecalho__menu__navbar__link {
+                    @apply p-[10px] rounded-[10px] flex items-center gap-5 transition-colors ease-in-out hover:bg-[#080708] hover:text-[#EDF7F6];
+                }
+
+            }
+        }
+
         & .cabecalho__navegacao {
             & .menu {
                 @apply flex justify-center content-center;
@@ -38,7 +56,7 @@
         }
 
         & .rodape__equipe {
-            @apply flex flex-col gap-[20px] max-w-[1200px];
+            @apply flex flex-col gap-[20px];
 
             & .rodape__equipe__turma {
                 @apply font-bold text-[1.125rem];
@@ -51,18 +69,22 @@
                     @apply flex flex-row justify-between text-[1rem];
 
                     & .membro__rm {
-                        @apply font-semibold w-[85px];
+                        @apply font-semibold w-[100px];
                     }
 
                     & .membro__nome {
-                        @apply font-normal w-[150px];
+                        @apply font-normal w-[150px] text-center;
                     }
 
                     & .membro__funcao {
-                        @apply font-normal w-[80px];
+                        @apply font-normal w-[100px] text-right;
                     }
                 }
             }
+        }
+
+        & .rodape__copyright {
+            @apply text-right;
         }
     }
 
@@ -121,5 +143,57 @@
         }
 
     }
-}
 
+    .form-page {
+        @apply w-full h-full p-[25px] flex flex-col gap-[25px] items-center justify-start bg-[#EDF7F6] text-[#080708];
+        
+        & .form-page__redirect {
+            @apply flex gap-[5px] max-w-[500px] w-full;
+
+            & .form-page__redirect__text {
+                @apply text-[#080708] text-left font-normal text-base;
+            }
+
+            & .form-page__redirect__link {
+                @apply text-[#1C60E3] text-left font-normal text-base;
+            }
+        }
+
+        & .form-page__form {
+            @apply flex flex-col gap-[20px] max-w-[500px] w-full;
+
+            & .form-page__form__field {
+                @apply flex flex-col gap-[20px];
+
+                & .form-page__form__field__titulo {
+                    @apply text-[#080708] text-left font-bold text-[1.2rem];
+                }
+
+            }
+        }
+    }
+
+    & .input {
+        @apply w-full px-[20px] py-[10px] border-[1px] border-[#080708] bg-white rounded-[2.5px] placeholder-[#080708];
+    }
+
+    & .input--checkbox {
+        @apply w-full px-[20px] py-[10px] flex gap-[10px];
+    }
+
+    & .input--tab {
+        @apply w-full max-w-[460px] ml-[40px] px-[20px] py-[10px] border-[1px] border-[#080708] bg-white rounded-[2.5px] placeholder-[#080708];
+    }
+
+    & .button {
+        @apply px-[15px] py-[10px] rounded-[4px] font-semibold text-center;
+    }
+    
+    & .button-black-outline {
+        @apply border-[1px] border-[#080708];
+    }
+    
+    & .button-color-filled {
+        @apply text-[#EDF7F6] bg-[#F08221];
+    }
+}
