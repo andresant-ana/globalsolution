@@ -1,10 +1,25 @@
 {
   "usuarios": [
+    {
+      "nome": "Gabriel",
+      "email": "gabrieleringerdeoliveira1234@gmail.com",
+      "cpf": "474.593.038-01",
+      "dataNascimento": "23/06/2005",
+      "sexo": "masculino",
+      "telefone": "+(55) 11963-026063",
+      "cep": "25243-73635",
+      "alergico": false,
+      "alergia": "",
+      "medicamentoContinuo": true,
+      "medicamento": "Bupropiona",
+      "foto_perfil": "",
+      "id": 1
+    }
   ],
   "doencas_de_pele": [
     {
       "id": 1,
-      "titulo": "Herpes labial",
+      "nome": "Herpes labial",
       "descricao": "O herpes labial é uma infecção causada pelo vírus herpes simplex tipo 1.",
       "sintomas": [
         "Os sintomas observados incluem",
@@ -18,14 +33,14 @@
         "Dor de garganta",
         "Dor de cabeça",
         "Dores musculares",
-        "linfonodos inchados"
+        "Linfonodos inchados"
       ],
-      "imagemSintomas": "/imgs/img-herpes-labial.png",
+      "imagemSintomas": "/imgs/doencas/img-herpes-labial.png",
       "causas": [
-        "HSV- 2, o qual geralmente causa herpes genital, pode se espalhar para a boca durante o sexo oral e causar herpes labial",
+        "HSV-2, o qual geralmente causa herpes genital, pode se espalhar para a boca durante o sexo oral e causar herpes labial",
         "O vírus se espalha facilmente pelo contato de pessoa a pessoa através",
         "Se beijando",
-        "sexo oral",
+        "Sexo oral",
         "Fluido de bolhas estouradas",
         "Compartilhar objetos como lâminas de barbear, toalhas, utensílios",
         "Os vírus que permanecem inativos podem ser reativados para causar reaparecimento da doença",
@@ -34,20 +49,225 @@
         "Febre",
         "Mudanças hormonais durante os ciclos menstruais",
         "Estresse",
-        "fadiga",
+        "Fadiga",
         "Exposição à luz solar ou ao vento",
         "Sistema imunológico enfraquecido devido ao tratamento de câncer."
       ],
-      "imagemCausa": "/imgs/img-herpes-labial.png",
+      "imagemCausas": "/imgs/doencas/img-herpes-labial.png",
       "tratamentos": [
         "Dermatologista: Especialista no estudo da pele e seus distúrbios",
-        "Antivirais: Seja na forma de pílulas orais ou cremes para serem aplicados nas feridas; medicamentos em formas injetáveis ​​são recomendados em casos graves",
+        "Antivirais: Seja na forma de pílulas orais ou cremes para serem aplicados nas feridas; medicamentos em formas injetáveis são recomendados em casos graves",
         "Analgésicos: Para aliviar a dor",
         "Evite tocar, esfregar ou coçar as bolhas ou feridas",
         "Não beije os outros",
         "Tome ou aplique os medicamentos conforme a prescrição",
         "Utilize cremes hidratantes, protetores labiais ou cremes para prevenir a secagem dos lábios",
         "Aplique compressas frias para reduzir a vermelhidão e a formação de crostas"
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Psoríase",
+      "descricao": "A psoríase é uma doença autoimune que causa o acúmulo de células da pele, formando escamas e manchas vermelhas.",
+      "sintomas": [
+        "Manchas vermelhas cobertas por escamas prateadas",
+        "Coceira e dor na pele",
+        "Unhas espessas e com sulcos",
+        "Articulações inchadas e doloridas em casos de psoríase artropática"
+      ],
+      "imagemSintomas": "/imgs/doencas/img-psoriase.png",
+      "causas": [
+        "Genética",
+        "Desregulação do sistema imunológico",
+        "Fatores ambientais, como infecções, lesões na pele e estresse"
+      ],
+      "imagemCausas": "/imgs/doencas/img-psoriase.png",
+      "tratamentos": [
+        "Corticosteroides tópicos",
+        "Fototerapia",
+        "Medicamentos imunossupressores",
+        "Terapia biológica"
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Eczema",
+      "descricao": "O eczema, também conhecido como dermatite atópica, é uma condição inflamatória da pele que causa coceira intensa e erupções cutâneas.",
+      "sintomas": [
+        "Pele seca e sensível",
+        "Coceira intensa",
+        "Inchaço e vermelhidão",
+        "Crostas quando as lesões são arranhadas"
+      ],
+      "imagemSintomas": "/imgs/doencas/img-eczema.png",
+      "causas": [
+        "Genética",
+        "Fatores ambientais, como exposição a alérgenos e irritantes",
+        "Disfunção do sistema imunológico"
+      ],
+      "imagemCausas": "/imgs/doencas/img-eczema.png",
+      "tratamentos": [
+        "Hidratantes para manter a pele úmida",
+        "Corticosteroides tópicos",
+        "Anti-histamínicos para controlar a coceira",
+        "Imunossupressores em casos graves"
+      ]
+    },
+    {
+      "id": 4,
+      "nome": "Acne",
+      "descricao": "A acne é uma condição comum da pele que ocorre quando os folículos pilosos ficam obstruídos por óleo e células mortas.",
+      "sintomas": ["Cravos", "Espinhas", "Nódulos", "Pústulas"],
+      "imagemSintomas": "/imgs/doencas/img-acne.png",
+      "causas": [
+        "Produção excessiva de óleo pela pele",
+        "Bactérias na pele",
+        "Hormônios",
+        "Fatores genéticos"
+      ],
+      "imagemCausas": "/imgs/doencas/img-acne.png",
+      "tratamentos": [
+        "Lavagem regular da pele",
+        "Uso de produtos com ácido salicílico ou peróxido de benzoíla",
+        "Medicamentos tópicos ou orais, como antibióticos",
+        "Procedimentos dermatológicos, como peelings químicos ou laser"
+      ]
+    },
+    {
+      "id": 5,
+      "nome": "Dermatite Seborreica",
+      "descricao": "A dermatite seborreica é uma condição inflamatória da pele que causa descamação e vermelhidão, geralmente afetando o couro cabeludo.",
+      "sintomas": [
+        "Escamas amareladas ou brancas",
+        "Vermelhidão na pele",
+        "Coceira intensa"
+      ],
+      "imagemSintomas": "/imgs/doencas/img-dermatite-seborreica.png",
+      "causas": [
+        "Produção excessiva de sebo",
+        "Proliferação de um fungo chamado Malassezia",
+        "Fatores genéticos"
+      ],
+      "imagemCausas": "/imgs/doencas/img-dermatite-seborreica.png",
+      "tratamentos": [
+        "Shampoos antifúngicos",
+        "Cremes ou loções antifúngicas",
+        "Corticosteroides tópicos",
+        "Luz ultravioleta em casos graves"
+      ]
+    },
+    {
+      "id": 6,
+      "nome": "Vitiligo",
+      "descricao": "O vitiligo é uma condição em que a pele perde sua pigmentação, resultando em manchas brancas ou sem cor.",
+      "sintomas": [
+        "Manchas brancas na pele",
+        "Pêlos brancos ou sem cor",
+        "Mudanças na cor da retina e mucosas em alguns casos"
+      ],
+      "imagemSintomas": "/imgs/doencas/img-vitiligo.png",
+      "causas": [
+        "Desordem autoimune",
+        "Fatores genéticos",
+        "Fatores ambientais, como estresse e exposição a produtos químicos"
+      ],
+      "imagemCausas": "/imgs/doencas/img-vitiligo.png",
+      "tratamentos": [
+        "Corticosteroides tópicos",
+        "Fototerapia",
+        "Transplante de melanócitos",
+        "Maquiagem para camuflagem"
+      ]
+    },
+    {
+      "id": 7,
+      "nome": "Rosácea",
+      "descricao": "A rosácea é uma condição crônica da pele que causa vermelhidão e vasos sanguíneos visíveis no rosto.",
+      "sintomas": [
+        "Vermelhidão persistente",
+        "Vasos sanguíneos visíveis",
+        "Pápulas e pústulas semelhantes à acne"
+      ],
+      "imagemSintomas": "/imgs/doencas/img-rosacea.png",
+      "causas": [
+        "Genética",
+        "Reação anormal aos ácaros da pele",
+        "Desequilíbrios no sistema imunológico"
+      ],
+      "imagemCausas": "/imgs/doencas/img-rosacea.png",
+      "tratamentos": [
+        "Antibióticos tópicos ou orais",
+        "Medicamentos anti-inflamatórios",
+        "Laser ou terapia de luz para reduzir a vermelhidão",
+        "Evitar gatilhos, como alimentos picantes e álcool"
+      ]
+    },
+    {
+      "id": 8,
+      "nome": "Impetigo",
+      "descricao": "O impetigo é uma infecção bacteriana da pele que causa feridas e crostas.",
+      "sintomas": [
+        "Lesões vermelhas que se transformam em bolhas cheias de líquido",
+        "Formação de crostas amarelas",
+        "Coceira"
+      ],
+      "imagemSintomas": "/imgs/doencas/img-impetigo.png",
+      "causas": [
+        "Bactérias, principalmente Streptococcus pyogenes e Staphylococcus aureus",
+        "Lesões na pele, como cortes ou picadas de insetos"
+      ],
+      "imagemCausas": "/imgs/doencas/img-impetigo.png",
+      "tratamentos": [
+        "Antibióticos tópicos ou orais",
+        "Limpeza suave das lesões com água e sabão",
+        "Evitar coçar para prevenir a disseminação da infecção"
+      ]
+    },
+    {
+      "id": 9,
+      "nome": "Micose",
+      "descricao": "A micose é uma infecção fúngica que afeta a pele, unhas e cabelo.",
+      "sintomas": [
+        "Manchas vermelhas e descamativas",
+        "Coceira intensa",
+        "Pele rachada ou fissurada"
+      ],
+      "imagemSintomas": "/imgs/doencas/img-micose.png",
+      "causas": [
+        "Fungos, como dermatófitos e leveduras",
+        "Contato direto com uma pessoa ou animal infectado",
+        "Ambientes úmidos e quentes"
+      ],
+      "imagemCausas": "/imgs/doencas/img-micose.png",
+      "tratamentos": [
+        "Antifúngicos tópicos ou orais",
+        "Manter a área afetada limpa e seca",
+        "Evitar compartilhamento de itens pessoais",
+        "Lavar roupas e lençóis regularmente"
+      ]
+    },
+    {
+      "id": 10,
+      "nome": "Lúpus Eritematoso",
+      "descricao": "O lúpus eritematoso é uma doença autoimune que pode afetar a pele, articulações, rins, coração, pulmões e sistema nervoso.",
+      "sintomas": [
+        "Erupções cutâneas em forma de borboleta no rosto",
+        "Lesões na pele em resposta à exposição ao sol",
+        "Dor nas articulações e inflamação",
+        "Fadiga"
+      ],
+      "imagemSintomas": "/imgs/doencas/img-lupus-eritematoso.png",
+      "causas": [
+        "Desregulação do sistema imunológico",
+        "Fatores genéticos",
+        "Exposição a certos medicamentos e luz solar"
+      ],
+      "imagemCausas": "/imgs/doencas/img-lupus-eritematoso.png",
+      "tratamentos": [
+        "Anti-inflamatórios",
+        "Imunossupressores",
+        "Proteção solar adequada",
+        "Medicamentos para controle dos sintomas específicos"
       ]
     }
   ]

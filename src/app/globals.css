@@ -209,4 +209,17 @@
     & .button-color-filled {
         @apply text-[#EDF7F6] bg-[#F08221];
     }
+
+    .sobre-container {
+            
+        & h1 {
+            @apply 
+                text-[#080708]
+                font-bold 
+                text-[1.5rem]
+            ;
+        }	
+
+    }
+
 }
