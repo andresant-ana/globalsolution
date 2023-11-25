@@ -4,7 +4,7 @@
   "doencas_de_pele": [
     {
       "id": 1,
-      "titulo": "Herpes labial",
+      "nome": "Herpes labial",
       "descricao": "O herpes labial é uma infecção causada pelo vírus herpes simplex tipo 1.",
       "sintomas": [
         "Os sintomas observados incluem",
