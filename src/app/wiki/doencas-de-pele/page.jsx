@@ -1,17 +1,28 @@
+"use client";
 import { IoMdArrowDropdown, IoMdArrowDropup } from 'react-icons/io';
-import Image from 'next/image';
+import DropdownContainer from '@/components/WikiDropdownContainer/DropdownContainer';
+import { useEffect, useState } from 'react';
 
-export default async function DoencasDePele() {
+export default function DoencasDePele() {
 
-    let doencasDePele;
-    try {
-        const response = await fetch('http://localhost:3000/api/base/base-doencas/0');
-        doencasDePele = await response.json();
+    const [doencasDePele, setDoencasDePele] = useState([]);
 
-    } catch (error) {
-        console.log(error);
-    }
+    useEffect(()=> {
+        const fetchData = async ()=> {
+            try {
+                const response = await fetch('http://localhost:3000/api/base/base-doencas/0');
+                const data = await response.json();
+                setDoencasDePele(data);
+                
+            } catch (error) {
+                console.log(error);
+            }
+        };
 
+        fetchData();
+    }, []);
+
+    const [containerOpen, setContainerOpen] = useState(false);
 
     return (
         <main className='w-full h-full p-[20px] pb-[50px] flex flex-col items-center gap-[25px] bg-[#EDF7F6]'>
@@ -20,12 +31,27 @@ export default async function DoencasDePele() {
                     doencasDePele.map((doenca) => (
                         <>
                             <section key={doenca.id} className='w-full flex flex-col gap-[10px]'>
-                                <div className='w-full px-[25px] py-[13px] flex justify-between items-center bg-white rounded-[10px] shadow-sm cursor-pointer'>
+                                <div onClick={()=> setContainerOpen(!containerOpen)} className='w-full px-[25px] py-[13px] flex justify-between items-center bg-white rounded-[10px] shadow-sm cursor-pointer'>
                                     <h2 className=' font-bold text-[1.2rem] text-[#080708]'>{doenca.nome}</h2>
                                     <IoMdArrowDropdown className='text-[1.2rem]' />
                                 </div>
 
-                                <article className='w-full rounded-[10px] flex flex-col gap-[25px] p-[25px] pb-[50px] bg-white shadow-sm'>
+                                {
+                                    containerOpen ?
+                                    <DropdownContainer 
+                                    nome={doenca.nome} 
+                                    descricao={doenca.descricao} 
+                                    sintomas={doenca.sintomas} 
+                                    imagemSintomas={doenca.imagemSintomas} 
+                                    causas={doenca.causas}
+                                    imagemCausas={doenca.imagemCausas}
+                                    tratamentos={doenca.tratamentos}
+                                    /> :
+                                    <></>
+                                
+                                }
+
+                                {/* <article className='w-full rounded-[10px] flex flex-col gap-[25px] p-[25px] pb-[50px] bg-white shadow-sm'>
                                     <section className='w-full flex gap-[5px]'>
                                         <p><strong className='font-semibold text-base text-[#080708]'>Nome:</strong></p>
                                         <p className='font-normal text-base text-[#080708]'>{doenca.nome}</p>
@@ -86,7 +112,7 @@ export default async function DoencasDePele() {
                                             }
                                         </ul>
                                     </section>
-                                </article>
+                                </article> */}
 
                             </section>
                         </>
