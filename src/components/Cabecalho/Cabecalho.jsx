@@ -34,7 +34,7 @@ export default function Cabecalho() {
           Logout
         </Link>
 
-        <Link href='/wiki' className="cabecalho__menu__navbar__link">
+        <Link href='/wiki/doencas-de-pele' className="cabecalho__menu__navbar__link">
           <MdArticle />
           WIKI
         </Link>
@@ -66,7 +66,7 @@ export default function Cabecalho() {
               <IoHome />
               Página Inicial
             </Link>
-            <Link href='/' className="cabecalho__menu__navbar__link">
+            <Link href='/sobre' className="cabecalho__menu__navbar__link">
               <MdPeopleAlt />
               Sobre nós
             </Link>
